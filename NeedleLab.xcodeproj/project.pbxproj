@@ -13,9 +13,13 @@
 		3B9579B0299AB4660000FC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579AE299AB4660000FC3A /* Main.storyboard */; };
 		3B9579B2299AB4670000FC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579B1299AB4670000FC3A /* Assets.xcassets */; };
 		3B9579B5299AB4670000FC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579B3299AB4670000FC3A /* LaunchScreen.storyboard */; };
+		5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103C8A41F7B812BD2439EA7F /* Pods-NeedleLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedleLab.release.xcconfig"; path = "Target Support Files/Pods-NeedleLab/Pods-NeedleLab.release.xcconfig"; sourceTree = "<group>"; };
+		320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeedleLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		370603B1C3EA0F9F52CB1457 /* Pods-NeedleLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedleLab.debug.xcconfig"; path = "Target Support Files/Pods-NeedleLab/Pods-NeedleLab.debug.xcconfig"; sourceTree = "<group>"; };
 		3B9579A5299AB4660000FC3A /* NeedleLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeedleLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9579A8299AB4660000FC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B9579AA299AB4660000FC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3B9579A7299AB4660000FC3A /* NeedleLab */,
 				3B9579A6299AB4660000FC3A /* Products */,
+				3FCB2D3EAEA40138B8346A27 /* Pods */,
+				89E8CDFF512423E6BAFAF585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = NeedleLab;
 			sourceTree = "<group>";
 		};
+		3FCB2D3EAEA40138B8346A27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				370603B1C3EA0F9F52CB1457 /* Pods-NeedleLab.debug.xcconfig */,
+				103C8A41F7B812BD2439EA7F /* Pods-NeedleLab.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		89E8CDFF512423E6BAFAF585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B9579B9299AB4670000FC3A /* Build configuration list for PBXNativeTarget "NeedleLab" */;
 			buildPhases = (
+				0EDFDA0471DED6AC0CE3015E /* [CP] Check Pods Manifest.lock */,
 				3B9579A1299AB4660000FC3A /* Sources */,
 				3B9579A2299AB4660000FC3A /* Frameworks */,
 				3B9579A3299AB4660000FC3A /* Resources */,
+				3B9579BC299AB51A0000FC3A /* ShellScript */,
+				E4A20974CD5B562281341F6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EDFDA0471DED6AC0CE3015E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeedleLab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B9579BC299AB51A0000FC3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which needle; then\n    SOURCEKIT_LOGGING=0 && needle generate NeedleLab/NeedleGenerated.swift NeedleLab/\nelse\n  echo \"warning: Needle not installed, download from https://github.com/uber/needle using Homebrew\"\nfi\n";
+		};
+		E4A20974CD5B562281341F6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeedleLab/Pods-NeedleLab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeedleLab/Pods-NeedleLab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeedleLab/Pods-NeedleLab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B9579A1299AB4660000FC3A /* Sources */ = {
@@ -282,6 +368,7 @@
 		};
 		3B9579BA299AB4670000FC3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 370603B1C3EA0F9F52CB1457 /* Pods-NeedleLab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +397,7 @@
 		};
 		3B9579BB299AB4670000FC3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 103C8A41F7B812BD2439EA7F /* Pods-NeedleLab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
