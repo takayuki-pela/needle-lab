@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B8603AC299ADE7100DE3FE0 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8603AB299ADE7100DE3FE0 /* NeedleGenerated.swift */; };
+		3B8603AF299AE02A00DE3FE0 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8603AE299AE02A00DE3FE0 /* RootComponent.swift */; };
 		3B9579A9299AB4660000FC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9579A8299AB4660000FC3A /* AppDelegate.swift */; };
 		3B9579AB299AB4660000FC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9579AA299AB4660000FC3A /* SceneDelegate.swift */; };
 		3B9579AD299AB4660000FC3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9579AC299AB4660000FC3A /* ViewController.swift */; };
 		3B9579B0299AB4660000FC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579AE299AB4660000FC3A /* Main.storyboard */; };
 		3B9579B2299AB4670000FC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579B1299AB4670000FC3A /* Assets.xcassets */; };
 		3B9579B5299AB4670000FC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9579B3299AB4670000FC3A /* LaunchScreen.storyboard */; };
+		3BC9D0F6299AE1A90082DED2 /* RootNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D0F5299AE1A90082DED2 /* RootNavController.swift */; };
+		3BC9D0F8299AE25D0082DED2 /* EntryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D0F7299AE25D0082DED2 /* EntryComponent.swift */; };
+		3BC9D0FB299AE27E0082DED2 /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D0FA299AE27E0082DED2 /* MainComponent.swift */; };
+		3BC9D100299AE2B20082DED2 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D0FF299AE2B20082DED2 /* HomeComponent.swift */; };
+		3BC9D102299AE2D10082DED2 /* HomeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D101299AE2D10082DED2 /* HomeDetail.swift */; };
+		3BC9D105299AE2F40082DED2 /* SettingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D104299AE2F40082DED2 /* SettingComponent.swift */; };
+		3BC9D107299AE3060082DED2 /* MyAccountComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D106299AE3060082DED2 /* MyAccountComponent.swift */; };
+		3BC9D10A299AE3270082DED2 /* LogInComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D109299AE3270082DED2 /* LogInComponent.swift */; };
+		3BC9D10D299AE34B0082DED2 /* CreateAccountComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D10C299AE34B0082DED2 /* CreateAccountComponent.swift */; };
+		3BC9D10F299AE35F0082DED2 /* SignupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D10E299AE35F0082DED2 /* SignupComponent.swift */; };
+		3BC9D111299AE36E0082DED2 /* ConfirmEmailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D110299AE36E0082DED2 /* ConfirmEmailComponent.swift */; };
 		5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +33,8 @@
 		103C8A41F7B812BD2439EA7F /* Pods-NeedleLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedleLab.release.xcconfig"; path = "Target Support Files/Pods-NeedleLab/Pods-NeedleLab.release.xcconfig"; sourceTree = "<group>"; };
 		320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeedleLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370603B1C3EA0F9F52CB1457 /* Pods-NeedleLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedleLab.debug.xcconfig"; path = "Target Support Files/Pods-NeedleLab/Pods-NeedleLab.debug.xcconfig"; sourceTree = "<group>"; };
+		3B8603AB299ADE7100DE3FE0 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
+		3B8603AE299AE02A00DE3FE0 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
 		3B9579A5299AB4660000FC3A /* NeedleLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeedleLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9579A8299AB4660000FC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B9579AA299AB4660000FC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +43,17 @@
 		3B9579B1299AB4670000FC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B9579B4299AB4670000FC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B9579B6299AB4670000FC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC9D0F5299AE1A90082DED2 /* RootNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavController.swift; sourceTree = "<group>"; };
+		3BC9D0F7299AE25D0082DED2 /* EntryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryComponent.swift; sourceTree = "<group>"; };
+		3BC9D0FA299AE27E0082DED2 /* MainComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
+		3BC9D0FF299AE2B20082DED2 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		3BC9D101299AE2D10082DED2 /* HomeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetail.swift; sourceTree = "<group>"; };
+		3BC9D104299AE2F40082DED2 /* SettingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponent.swift; sourceTree = "<group>"; };
+		3BC9D106299AE3060082DED2 /* MyAccountComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountComponent.swift; sourceTree = "<group>"; };
+		3BC9D109299AE3270082DED2 /* LogInComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInComponent.swift; sourceTree = "<group>"; };
+		3BC9D10C299AE34B0082DED2 /* CreateAccountComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountComponent.swift; sourceTree = "<group>"; };
+		3BC9D10E299AE35F0082DED2 /* SignupComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupComponent.swift; sourceTree = "<group>"; };
+		3BC9D110299AE36E0082DED2 /* ConfirmEmailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B8603AD299AE01E00DE3FE0 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				3B8603AE299AE02A00DE3FE0 /* RootComponent.swift */,
+				3BC9D0F5299AE1A90082DED2 /* RootNavController.swift */,
+				3BC9D0FD299AE2860082DED2 /* main */,
+				3BC9D0FC299AE2820082DED2 /* entry */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		3B95799C299AB4660000FC3A = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +100,8 @@
 		3B9579A7299AB4660000FC3A /* NeedleLab */ = {
 			isa = PBXGroup;
 			children = (
+				3B8603AD299AE01E00DE3FE0 /* components */,
+				3B8603AB299ADE7100DE3FE0 /* NeedleGenerated.swift */,
 				3B9579A8299AB4660000FC3A /* AppDelegate.swift */,
 				3B9579AA299AB4660000FC3A /* SceneDelegate.swift */,
 				3B9579AC299AB4660000FC3A /* ViewController.swift */,
@@ -72,6 +111,62 @@
 				3B9579B6299AB4670000FC3A /* Info.plist */,
 			);
 			path = NeedleLab;
+			sourceTree = "<group>";
+		};
+		3BC9D0FC299AE2820082DED2 /* entry */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D10B299AE32E0082DED2 /* signup */,
+				3BC9D108299AE31A0082DED2 /* login */,
+				3BC9D0F7299AE25D0082DED2 /* EntryComponent.swift */,
+			);
+			path = entry;
+			sourceTree = "<group>";
+		};
+		3BC9D0FD299AE2860082DED2 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D0FA299AE27E0082DED2 /* MainComponent.swift */,
+				3BC9D0FE299AE2A70082DED2 /* home */,
+				3BC9D103299AE2D50082DED2 /* setting */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		3BC9D0FE299AE2A70082DED2 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D0FF299AE2B20082DED2 /* HomeComponent.swift */,
+				3BC9D101299AE2D10082DED2 /* HomeDetail.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		3BC9D103299AE2D50082DED2 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D104299AE2F40082DED2 /* SettingComponent.swift */,
+				3BC9D106299AE3060082DED2 /* MyAccountComponent.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		3BC9D108299AE31A0082DED2 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D109299AE3270082DED2 /* LogInComponent.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		3BC9D10B299AE32E0082DED2 /* signup */ = {
+			isa = PBXGroup;
+			children = (
+				3BC9D10E299AE35F0082DED2 /* SignupComponent.swift */,
+				3BC9D10C299AE34B0082DED2 /* CreateAccountComponent.swift */,
+				3BC9D110299AE36E0082DED2 /* ConfirmEmailComponent.swift */,
+			);
+			path = signup;
 			sourceTree = "<group>";
 		};
 		3FCB2D3EAEA40138B8346A27 /* Pods */ = {
@@ -224,9 +319,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC9D10F299AE35F0082DED2 /* SignupComponent.swift in Sources */,
+				3BC9D0F8299AE25D0082DED2 /* EntryComponent.swift in Sources */,
+				3BC9D107299AE3060082DED2 /* MyAccountComponent.swift in Sources */,
+				3BC9D111299AE36E0082DED2 /* ConfirmEmailComponent.swift in Sources */,
+				3BC9D100299AE2B20082DED2 /* HomeComponent.swift in Sources */,
+				3B8603AC299ADE7100DE3FE0 /* NeedleGenerated.swift in Sources */,
+				3BC9D0F6299AE1A90082DED2 /* RootNavController.swift in Sources */,
 				3B9579AD299AB4660000FC3A /* ViewController.swift in Sources */,
 				3B9579A9299AB4660000FC3A /* AppDelegate.swift in Sources */,
+				3BC9D105299AE2F40082DED2 /* SettingComponent.swift in Sources */,
+				3B8603AF299AE02A00DE3FE0 /* RootComponent.swift in Sources */,
+				3BC9D0FB299AE27E0082DED2 /* MainComponent.swift in Sources */,
 				3B9579AB299AB4660000FC3A /* SceneDelegate.swift in Sources */,
+				3BC9D10D299AE34B0082DED2 /* CreateAccountComponent.swift in Sources */,
+				3BC9D102299AE2D10082DED2 /* HomeDetail.swift in Sources */,
+				3BC9D10A299AE3270082DED2 /* LogInComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

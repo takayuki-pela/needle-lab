@@ -1,0 +1,12 @@
+//
+//  RootNavController.swift
+//  NeedleLab
+//
+//  Created by Takayuki Yamaguchi on 2023-02-13.
+//
+
+import UIKit
+
+final class RootNavController: UITabBarController {
+    
+}
