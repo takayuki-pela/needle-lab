@@ -12,6 +12,7 @@ final class RootNavController: UITabBarController {
         self.mainNavBuilder = mainNavBuilder
         self.entryNavBuilder = entryNavBuilder
         super.init(nibName: nil, bundle: nil)
+        self.viewControllers = [mainNavBuilder.mainNavController, entryNavBuilder.entryNavController]
     }
     
     required init?(coder: NSCoder) {

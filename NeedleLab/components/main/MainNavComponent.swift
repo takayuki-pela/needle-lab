@@ -17,6 +17,10 @@ protocol MainNavBuilder {
 
 final class MainNavComponent: Component<MainNavDependency>, MainNavBuilder {    
     var mainNavController: UIViewController {
-        return MainNavController()
+        return MainNavController(homeNavBuilder: homeNavComponent)
+    }
+    
+    var homeNavComponent: HomeNavComponent {
+        return HomeNavComponent(parent: self)
     }
 }

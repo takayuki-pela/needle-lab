@@ -26,4 +26,14 @@ final class RootNavComponent: BootstrapComponent, RootNavBuilder {
     var entryNavComponent: EntryNavComponent {
         return EntryNavComponent(parent: self)
     }
+    
+    func goToMain() {
+        guard let tabVC = rootNavController as? UITabBarController else { return }
+        tabVC.selectedIndex = 0
+    }
+    
+    func goToEntry() {
+        guard let tabVC = rootNavController as? UITabBarController else { return }
+        tabVC.selectedIndex = 1
+    }
 }
