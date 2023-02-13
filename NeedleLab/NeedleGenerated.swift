@@ -15,9 +15,42 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
 
 #if !NEEDLE_DYNAMIC
 
+private class EntryNavDependencyc1caa2a522e995b1a3e5Provider: EntryNavDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->RootNavComponent->EntryNavComponent
+private func factory3d38a5c3ce560fd06cdee3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return EntryNavDependencyc1caa2a522e995b1a3e5Provider()
+}
+private class MainNavDependencyf3678d30813bd7dcc4e4Provider: MainNavDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->RootNavComponent->MainNavComponent
+private func factory292e885e4a00ce28ff9ce3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return MainNavDependencyf3678d30813bd7dcc4e4Provider()
+}
 
 #else
-extension RootComponent: Registration {
+extension EntryNavComponent: Registration {
+    public func registerItems() {
+
+    }
+}
+extension RootNavComponent: Registration {
+    public func registerItems() {
+
+
+    }
+}
+extension MainNavComponent: Registration {
     public func registerItems() {
 
     }
@@ -38,7 +71,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 #if !NEEDLE_DYNAMIC
 
 @inline(never) private func register1() {
-    registerProviderFactory("^->RootComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->EntryNavComponent", factory3d38a5c3ce560fd06cdee3b0c44298fc1c149afb)
+    registerProviderFactory("^->RootNavComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent", factory292e885e4a00ce28ff9ce3b0c44298fc1c149afb)
 }
 #endif
 

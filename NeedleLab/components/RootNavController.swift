@@ -8,5 +8,16 @@
 import UIKit
 
 final class RootNavController: UITabBarController {
+    internal init(mainNavBuilder: MainNavBuilder, entryNavBuilder: EntryNavBuilder) {
+        self.mainNavBuilder = mainNavBuilder
+        self.entryNavBuilder = entryNavBuilder
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let mainNavBuilder: MainNavBuilder
+    private let entryNavBuilder: EntryNavBuilder
 }
