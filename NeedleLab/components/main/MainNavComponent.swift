@@ -13,7 +13,7 @@ protocol MainNavBuilder {
 
 final class MainNavComponent: Component<EmptyDependency>, MainNavBuilder {
     var mainNavController: UIViewController {
-        shared { MainNavController(homeNavBuilder: homeNavComponent) }
+        MainNavController(homeNavBuilder: homeNavComponent)
     }
     
     var homeNavComponent: HomeNavComponent {

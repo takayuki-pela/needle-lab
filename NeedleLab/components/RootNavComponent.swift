@@ -13,12 +13,11 @@ protocol RootNavBuilder {
 
 final class RootNavComponent: BootstrapComponent, RootNavBuilder {
     var rootNavController: UIViewController {
-        RootNavController(
-                mainNavBuilder: mainNavComponent,
-                entryNavBuilder: entryNavComponent
-        )
+        shared { RootNavController(
+            mainNavBuilder: mainNavComponent,
+            entryNavBuilder: entryNavComponent
+        )}
     }
-    
     
     var mainNavComponent: MainNavComponent {
         return MainNavComponent(parent: self)

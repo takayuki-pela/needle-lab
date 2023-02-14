@@ -20,7 +20,7 @@ final class HomeNavComponent: Component<EmptyDependency>, HomeNavBuilder {
         capturedVC = vc
         return vc
     }
-    var capturedVC: HomeNavController? = nil
+    var capturedVC: HomeNavController?
     
     var homeFirstViewComponent: HomeFirstViewComponent {
         return HomeFirstViewComponent(parent: self)
@@ -29,10 +29,11 @@ final class HomeNavComponent: Component<EmptyDependency>, HomeNavBuilder {
     var homeSecondViewComponent: HomeSecondViewComponent {
         return HomeSecondViewComponent(parent: self)
     }
-    
-    // --- dependencies to children
+//    
+//    // --- dependencies to children
     var goToSecond: () -> Void {
-        return { [weak self] in
+        { [weak self] in
+            print(self?.capturedVC)
             self?.capturedVC?.pushToSecond()
         }
     }

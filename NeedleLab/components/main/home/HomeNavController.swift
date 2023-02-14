@@ -22,7 +22,10 @@ final class HomeNavController: UINavigationController {
     private let homeSecondViewBuilder: HomeSecondViewBuilder
     
     func pushToSecond() {
-        print(self)
         self.pushViewController(homeSecondViewBuilder.homeSecondViewController, animated: true)
+    }
+    
+    deinit {
+        print("home nav deinit")
     }
 }

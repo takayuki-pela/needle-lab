@@ -29,4 +29,8 @@ final class HomeFirstViewComponent: Component<HomeFirstViewDependency>, HomeFirs
     var homeFirstViewModel: HomeFirstViewModel {
         return HomeFirstViewModel()
     }
+    
+    deinit {
+        print("home first deinit")
+    }
 }

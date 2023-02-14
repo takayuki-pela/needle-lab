@@ -13,9 +13,7 @@ protocol LoginNavBuilder {
 
 final class LoginNavComponent: Component<EmptyDependency>, LoginNavBuilder {
     var loginNavController: LoginNavController {
-        shared {
-            LoginNavController(loginViewBuilder: loginViewComponent)
-        }
+        LoginNavController(loginViewBuilder: loginViewComponent)
     }
     
     var loginViewComponent: LoginViewComponent {
