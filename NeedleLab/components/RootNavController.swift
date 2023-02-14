@@ -30,4 +30,10 @@ final class RootNavController: UITabBarController {
         print(self)
         self.viewControllers = [entryNavBuilder.entryNavController]
     }
+    
+    func switchToSetting() {
+        if let mainNav = self.viewControllers?.first as? MainNavController {
+            mainNav.selectedIndex = 1
+        }
+    }
 }

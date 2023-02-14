@@ -52,6 +52,9 @@ private func factory7e03f72a3a9927a551b25b46fe57dd3e282050f7(_ component: Needle
     return LoginInViewDependency2abb3c8c60c1e97fe50cProvider(rootNavComponent: parent3(component) as! RootNavComponent)
 }
 private class HomeSecondViewDependency8cde6d322ec21db56f57Provider: HomeSecondViewDependency {
+    var goToSetting: () -> Void {
+        return rootNavComponent.goToSetting
+    }
     var goToEntry: () -> Void {
         return rootNavComponent.goToEntry
     }
@@ -111,6 +114,7 @@ extension RootNavComponent: Registration {
 }
 extension HomeSecondViewComponent: Registration {
     public func registerItems() {
+        keyPathToName[\HomeSecondViewDependency.goToSetting] = "goToSetting-() -> Void"
         keyPathToName[\HomeSecondViewDependency.goToEntry] = "goToEntry-() -> Void"
         keyPathToName[\HomeSecondViewDependency.stateWrapper] = "stateWrapper-StateWrapper"
         keyPathToName[\HomeSecondViewDependency.printService] = "printService-PrintService"

@@ -37,6 +37,11 @@ final class RootNavComponent: BootstrapComponent, RootNavBuilder {
         tabVC.switchToEntry()
     } }
     
+    var goToSetting: () -> Void { { [weak self] in
+        guard let tabVC = self?.rootNavController as? RootNavController else { return }
+        tabVC.switchToSetting()
+    } }
+    
     var stateWrapper: StateWrapper {
         shared {
             return StateWrapper()

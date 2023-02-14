@@ -12,6 +12,7 @@ struct HomeSecondScreen: View {
     @ObservedObject var globalCount: CountState
     var viewController: HomeSecondViewController
     var goToEntry: () -> Void
+    var goToSetting: () -> Void
     
     var body: some View {
         VStack {
@@ -33,6 +34,11 @@ struct HomeSecondScreen: View {
                 goToEntry()
             } label: {
                 Text("Go to Entry")
+            }
+            Button {
+                goToSetting()
+            } label: {
+                Text("Go to Setting")
             }
         }
     }

@@ -9,6 +9,7 @@ import NeedleFoundation
 import SwiftUI
 
 protocol HomeSecondViewDependency: Dependency {
+    var goToSetting: () -> Void { get }
     var goToEntry: () -> Void { get }
     var stateWrapper: StateWrapper { get }
     var printService: PrintService { get }
@@ -28,7 +29,7 @@ final class HomeSecondViewComponent: Component<HomeSecondViewDependency>, HomeSe
     }
     
     var homeSecondScreen: HomeSecondScreen {
-        return HomeSecondScreen(viewModel: homeSecondViewModel, globalCount: dependency.stateWrapper.countState, viewController: homeSecondViewController, goToEntry: dependency.goToEntry)
+        return HomeSecondScreen(viewModel: homeSecondViewModel, globalCount: dependency.stateWrapper.countState, viewController: homeSecondViewController, goToEntry: dependency.goToEntry, goToSetting: dependency.goToSetting)
     }
     
     var homeSecondViewModel: HomeSecondViewModel {
