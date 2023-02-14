@@ -15,7 +15,7 @@ protocol HomeFirstViewBuilder {
 final class HomeFirstViewComponent: Component<EmptyDependency>, HomeFirstViewBuilder {
     
     var homeFirstUIHostingController: UIViewController {
-        return shared { UIHostingController(rootView: homeFirstScreen) }
+        return UIHostingController(rootView: homeFirstScreen)
     }
     
     var homeFirstViewController: HomeFirstViewController {

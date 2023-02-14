@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginScreen: View {
     @ObservedObject var viewModel: LoginViewModel
+    @ObservedObject var globalCount: CountState
+    
     var goToMain: () -> Void
     
     var body: some View {
@@ -21,13 +23,15 @@ struct LoginScreen: View {
             } label: {
                 Text("Go to main")
             }
+            
+            Text("Global State \(globalCount.count)")
 
         }
     }
 }
-
-struct LoginScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginScreen(viewModel: LoginViewModel(), goToMain: {})
-    }
-}
+//
+//struct LoginScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginScreen(viewModel: LoginViewModel(), goToMain: {})
+//    }
+//}

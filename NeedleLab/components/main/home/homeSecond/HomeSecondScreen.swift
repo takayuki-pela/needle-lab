@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeSecondScreen: View {
     @ObservedObject var viewModel: HomeSecondViewModel
+    @ObservedObject var globalCount: CountState
     var viewController: HomeSecondViewController
     var goToEntry: () -> Void
     
@@ -21,6 +22,12 @@ struct HomeSecondScreen: View {
             } label: {
                 Text("Count is \(viewModel.count)")
             }
+            
+            Button {
+                viewController.addGlobalCount()
+            } label: {
+                Text("Global Count is \(globalCount.count)")
+            }
 
             Button {
                 goToEntry()
@@ -31,8 +38,8 @@ struct HomeSecondScreen: View {
     }
 }
 
-struct HomeSecondScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeSecondScreen(viewModel: HomeSecondViewModel(), viewController: HomeSecondViewController(viewModel: HomeSecondViewModel()), goToEntry: {} )
-    }
-}
+//struct HomeSecondScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeSecondScreen(viewModel: HomeSecondViewModel(), viewController: HomeSecondViewController(viewModel: HomeSecondViewModel()), goToEntry: {} )
+//    }
+//}

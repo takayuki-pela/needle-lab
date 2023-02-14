@@ -8,13 +8,22 @@
 import Foundation
 
 final class HomeSecondViewController {
-    internal init(viewModel: HomeSecondViewModel) {
+    internal init(viewModel: HomeSecondViewModel, countState: CountState, printService: PrintService) {
+        self.printService = printService
         self.viewModel = viewModel
+        self.countState = countState
     }
     
     var viewModel: HomeSecondViewModel
+    var countState: CountState
+    var printService: PrintService
     
     func addCount() {
         viewModel.count += 1
+    }
+    
+    func addGlobalCount() {
+        countState.count += 1
+        printService.printSomething()
     }
 }

@@ -43,6 +43,9 @@ private class LoginInViewDependency2abb3c8c60c1e97fe50cProvider: LoginInViewDepe
     var goToMain: () -> Void {
         return rootNavComponent.goToMain
     }
+    var stateWrapper: StateWrapper {
+        return rootNavComponent.stateWrapper
+    }
     private let rootNavComponent: RootNavComponent
     init(rootNavComponent: RootNavComponent) {
         self.rootNavComponent = rootNavComponent
@@ -55,6 +58,12 @@ private func factory7e03f72a3a9927a551b25b46fe57dd3e282050f7(_ component: Needle
 private class HomeSecondViewDependency4cc1c19d041b25f7a5afProvider: HomeSecondViewDependency {
     var goToEntry: () -> Void {
         return rootNavComponent.goToEntry
+    }
+    var stateWrapper: StateWrapper {
+        return rootNavComponent.stateWrapper
+    }
+    var printService: PrintService {
+        return rootNavComponent.printService
     }
     private let rootNavComponent: RootNavComponent
     init(rootNavComponent: RootNavComponent) {
@@ -82,6 +91,7 @@ extension LoginNavComponent: Registration {
 extension LoginViewComponent: Registration {
     public func registerItems() {
         keyPathToName[\LoginInViewDependency.goToMain] = "goToMain-() -> Void"
+        keyPathToName[\LoginInViewDependency.stateWrapper] = "stateWrapper-StateWrapper"
     }
 }
 extension RootNavComponent: Registration {
@@ -93,6 +103,8 @@ extension RootNavComponent: Registration {
 extension HomeSecondViewComponent: Registration {
     public func registerItems() {
         keyPathToName[\HomeSecondViewDependency.goToEntry] = "goToEntry-() -> Void"
+        keyPathToName[\HomeSecondViewDependency.stateWrapper] = "stateWrapper-StateWrapper"
+        keyPathToName[\HomeSecondViewDependency.printService] = "printService-PrintService"
     }
 }
 extension HomeFirstViewComponent: Registration {

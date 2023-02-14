@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol LoginInViewDependency: Dependency {
     var goToMain: () -> Void { get }
+    var stateWrapper: StateWrapper { get }
 }
 
 protocol LoginViewBuilder {
@@ -23,7 +24,7 @@ final class LoginViewComponent: Component<LoginInViewDependency>, LoginViewBuild
     }
     
     var loginScreen: LoginScreen {
-        return LoginScreen(viewModel: LoginViewModel(), goToMain: dependency.goToMain)
+        return LoginScreen(viewModel: LoginViewModel(), globalCount: dependency.stateWrapper.countState, goToMain: dependency.goToMain)
     }
     
     var loginViewModel: LoginViewModel {

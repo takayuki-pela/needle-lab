@@ -37,4 +37,36 @@ final class RootNavComponent: BootstrapComponent, RootNavBuilder {
         tabVC.switchToEntry()
     } }
     
+    var stateWrapper: StateWrapper {
+        shared {
+            return StateWrapper()
+        }
+    }
+    
+    var printService: PrintService {
+        shared {
+            return PrintService()
+        }
+    }
+}
+
+final class StateWrapper {
+    init() {
+        print("state wrapper init")
+    }
+    let countState = CountState()
+}
+
+final class CountState: ObservableObject {
+    @Published var count: Int = 0
+}
+
+final class PrintService {
+    init() {
+        print("print service init")
+    }
+    
+    func printSomething() {
+        print("aaaaaa")
+    }
 }

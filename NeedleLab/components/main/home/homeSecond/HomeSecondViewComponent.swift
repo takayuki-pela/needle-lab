@@ -10,6 +10,8 @@ import SwiftUI
 
 protocol HomeSecondViewDependency: Dependency {
     var goToEntry: () -> Void { get }
+    var stateWrapper: StateWrapper { get }
+    var printService: PrintService { get }
 }
 
 protocol HomeSecondViewBuilder {
@@ -22,11 +24,11 @@ final class HomeSecondViewComponent: Component<HomeSecondViewDependency>, HomeSe
     }
     
     var homeSecondViewController: HomeSecondViewController {
-        return HomeSecondViewController(viewModel: homeSecondViewModel)
+        return HomeSecondViewController(viewModel: homeSecondViewModel, countState: dependency.stateWrapper.countState, printService: dependency.printService)
     }
     
     var homeSecondScreen: HomeSecondScreen {
-        return HomeSecondScreen(viewModel: homeSecondViewModel, viewController: homeSecondViewController, goToEntry: dependency.goToEntry)
+        return HomeSecondScreen(viewModel: homeSecondViewModel, globalCount: dependency.stateWrapper.countState, viewController: homeSecondViewController, goToEntry: dependency.goToEntry)
     }
     
     var homeSecondViewModel: HomeSecondViewModel {
