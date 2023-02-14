@@ -8,12 +8,20 @@
 import UIKit
 
 final class HomeNavController: UINavigationController {
+    
     internal init(homeFirstViewBuilder: HomeFirstViewBuilder) {
         super.init(rootViewController: homeFirstViewBuilder.homeFirstUIHostingController)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func pushToSecond(homeSecondViewBuilder: HomeSecondViewBuilder?) {
+        if let nextVC = homeSecondViewBuilder?.homeSecondHostingController {
+            self.pushViewController(nextVC, animated: true)
+        }
+        
     }
 
     deinit {

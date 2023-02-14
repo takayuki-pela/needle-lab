@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct HomeFirstScreen: View {
+    internal init(viewController: HomeFirstViewController, goToSecond: @escaping () -> Void) {
+        self.viewModel = viewController.viewModel
+        self.viewController = viewController
+        self.goToSecond = goToSecond
+    }
+    
     @ObservedObject var viewModel: HomeFirstViewModel
     var viewController: HomeFirstViewController
     
@@ -31,9 +37,9 @@ struct HomeFirstScreen: View {
         }
     }
 }
-
-struct HomeFirstScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeFirstScreen(viewModel: HomeFirstViewModel(), viewController: HomeFirstViewController(viewModel: HomeFirstViewModel()), goToSecond: {})
-    }
-}
+//
+//struct HomeFirstScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeFirstScreen(viewModel: HomeFirstViewModel(), viewController: HomeFirstViewController(viewModel: HomeFirstViewModel()), goToSecond: {})
+//    }
+//}

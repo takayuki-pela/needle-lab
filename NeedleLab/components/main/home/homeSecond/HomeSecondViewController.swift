@@ -26,4 +26,8 @@ final class HomeSecondViewController {
         countState.count += 1
         printService.printSomething()
     }
+    
+    deinit {
+        print("home second controller deinit")
+    }
 }

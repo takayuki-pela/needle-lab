@@ -13,17 +13,20 @@ protocol HomeNavBuilder {
 
 final class HomeNavComponent: Component<EmptyDependency>, HomeNavBuilder {
     var homeNavController: HomeNavController {
-         HomeNavController(homeFirstViewBuilder: homeFirstViewComponent)
+        shared { HomeNavController(homeFirstViewBuilder: homeFirstViewComponent) }
     }
     var homeFirstViewComponent: HomeFirstViewComponent {
         return HomeFirstViewComponent(parent: self)
     }
+    
+    var homeSecondViewComponent: HomeSecondViewComponent {
+        return HomeSecondViewComponent(parent: self)
+    }
 //    
 //    // --- dependencies to children
-//    var goToSecond: () -> Void {
-//        { [weak self] in
-//            print(self?.homeNavController)
-//            self?.homeNavController.pushToSecond()
-//        }
-//    }
+    var goToSecond: () -> Void {
+        { [weak self] in
+            self?.homeNavController.pushToSecond(homeSecondViewBuilder: self?.homeSecondViewComponent)
+        }
+    }
 }

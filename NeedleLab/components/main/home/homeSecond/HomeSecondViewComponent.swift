@@ -36,6 +36,6 @@ final class HomeSecondViewComponent: Component<HomeSecondViewDependency>, HomeSe
     }
     
     deinit {
-        print("home second deinit")
+        print("home second component deinit")
     }
 }

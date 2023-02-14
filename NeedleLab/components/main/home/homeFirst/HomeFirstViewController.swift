@@ -15,6 +15,11 @@ final class HomeFirstViewController {
     var viewModel: HomeFirstViewModel
     
     func addCount() {
+        print(viewModel.count)
         viewModel.count += 1
+    }
+    
+    deinit {
+        print("home first controller deinit")
     }
 }
