@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+final class MyAccountViewController {
+    deinit {
+        print("my account vc deinit")
+    }
+}

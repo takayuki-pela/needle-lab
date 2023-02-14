@@ -133,6 +133,23 @@ extension MainNavComponent: Registration {
 
     }
 }
+extension MyAccountViewComponent: Registration {
+    public func registerItems() {
+
+    }
+}
+extension SettingNavComponent: Registration {
+    public func registerItems() {
+
+
+    }
+}
+extension SettingViewComponent: Registration {
+    public func registerItems() {
+
+
+    }
+}
 
 
 #endif
@@ -157,6 +174,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent", factory03e6c5c57ef2f05fcab2a7b75c5f91bd88523d04)
     registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->RootNavComponent->MainNavComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->SettingNavComponent->SettingViewComponent->MyAccountViewComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->SettingNavComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->SettingNavComponent->SettingViewComponent", factoryEmptyDependencyProvider)
 }
 #endif
 

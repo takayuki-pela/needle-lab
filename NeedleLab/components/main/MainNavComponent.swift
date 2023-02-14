@@ -13,10 +13,14 @@ protocol MainNavBuilder {
 
 final class MainNavComponent: Component<EmptyDependency>, MainNavBuilder {
     var mainNavController: UIViewController {
-        MainNavController(homeNavBuilder: homeNavComponent)
+        MainNavController(homeNavBuilder: homeNavComponent, settingNavBuilder: settingNavComponent)
     }
     
     var homeNavComponent: HomeNavComponent {
         return HomeNavComponent(parent: self)
+    }
+    
+    var settingNavComponent: SettingNavComponent {
+        return SettingNavComponent(parent: self)
     }
 }

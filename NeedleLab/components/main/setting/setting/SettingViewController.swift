@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+final class SettingViewController {
+    deinit {
+        print("setting vc deinit")
+    }
+}

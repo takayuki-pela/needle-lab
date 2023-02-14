@@ -44,6 +44,8 @@
 		3BC9D149299B03410082DED2 /* LoginNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D148299B03410082DED2 /* LoginNavController.swift */; };
 		3BC9D14C299B13EE0082DED2 /* HomeFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D14B299B13EE0082DED2 /* HomeFirstViewController.swift */; };
 		3BC9D14E299BFF710082DED2 /* HomeSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D14D299BFF710082DED2 /* HomeSecondViewController.swift */; };
+		3BC9D152299C40250082DED2 /* MyAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D151299C40250082DED2 /* MyAccountScreen.swift */; };
+		3BC9D154299C41BB0082DED2 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D153299C41BB0082DED2 /* SettingScreen.swift */; };
 		5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		3BC9D148299B03410082DED2 /* LoginNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavController.swift; sourceTree = "<group>"; };
 		3BC9D14B299B13EE0082DED2 /* HomeFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFirstViewController.swift; sourceTree = "<group>"; };
 		3BC9D14D299BFF710082DED2 /* HomeSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondViewController.swift; sourceTree = "<group>"; };
+		3BC9D151299C40250082DED2 /* MyAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountScreen.swift; sourceTree = "<group>"; };
+		3BC9D153299C41BB0082DED2 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,8 +242,9 @@
 		3BC9D12F299AE9F40082DED2 /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9D134299AEB730082DED2 /* SettingViewController.swift */,
 				3BC9D136299AEBE30082DED2 /* SettingViewComponent.swift */,
+				3BC9D134299AEB730082DED2 /* SettingViewController.swift */,
+				3BC9D153299C41BB0082DED2 /* SettingScreen.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			children = (
 				3BC9D106299AE3060082DED2 /* MyAccountViewComponent.swift */,
 				3BC9D131299AEA1B0082DED2 /* MyAccountViewController.swift */,
+				3BC9D151299C40250082DED2 /* MyAccountScreen.swift */,
 			);
 			path = myAccount;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				3BC9D100299AE2B20082DED2 /* HomeNavComponent.swift in Sources */,
 				3BC9D137299AEBE30082DED2 /* SettingViewComponent.swift in Sources */,
 				3B8603AC299ADE7100DE3FE0 /* NeedleGenerated.swift in Sources */,
+				3BC9D154299C41BB0082DED2 /* SettingScreen.swift in Sources */,
 				3BC9D0F6299AE1A90082DED2 /* RootNavController.swift in Sources */,
 				3BC9D124299AE92B0082DED2 /* HomeNavController.swift in Sources */,
 				3BC9D141299AF3230082DED2 /* HomeSecondViewModel.swift in Sources */,
@@ -442,6 +449,7 @@
 				3B8603AF299AE02A00DE3FE0 /* RootNavComponent.swift in Sources */,
 				3BC9D14E299BFF710082DED2 /* HomeSecondViewController.swift in Sources */,
 				3BC9D0FB299AE27E0082DED2 /* MainNavComponent.swift in Sources */,
+				3BC9D152299C40250082DED2 /* MyAccountScreen.swift in Sources */,
 				3B9579AB299AB4660000FC3A /* SceneDelegate.swift in Sources */,
 				3BC9D10D299AE34B0082DED2 /* CreateAccountComponent.swift in Sources */,
 				3BC9D102299AE2D10082DED2 /* HomeFirstViewComponent.swift in Sources */,

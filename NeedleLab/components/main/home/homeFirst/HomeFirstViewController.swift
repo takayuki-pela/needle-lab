@@ -20,6 +20,6 @@ final class HomeFirstViewController {
     }
     
     deinit {
-        print("home first controller deinit")
+        print("home first vc deinit")
     }
 }
