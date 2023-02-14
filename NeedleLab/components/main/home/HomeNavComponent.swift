@@ -13,27 +13,17 @@ protocol HomeNavBuilder {
 
 final class HomeNavComponent: Component<EmptyDependency>, HomeNavBuilder {
     var homeNavController: HomeNavController {
-        let vc = HomeNavController(
-                homeFirstViewBuilder: homeFirstViewComponent,
-                homeSecondViewBuilder: homeSecondViewComponent
-        )
-        return vc
+         HomeNavController(homeFirstViewBuilder: homeFirstViewComponent)
     }
-    var capturedVC: HomeNavController?
-    
     var homeFirstViewComponent: HomeFirstViewComponent {
         return HomeFirstViewComponent(parent: self)
     }
-    
-    var homeSecondViewComponent: HomeSecondViewComponent {
-        return HomeSecondViewComponent(parent: self)
-    }
 //    
 //    // --- dependencies to children
-    var goToSecond: () -> Void {
-        { [weak self] in
-            print(self?.homeNavController)
-            self?.homeNavController.pushToSecond()
-        }
-    }
+//    var goToSecond: () -> Void {
+//        { [weak self] in
+//            print(self?.homeNavController)
+//            self?.homeNavController.pushToSecond()
+//        }
+//    }
 }

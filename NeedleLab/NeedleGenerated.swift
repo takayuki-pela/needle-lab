@@ -20,6 +20,10 @@ private func parent3(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
     return component.parent.parent.parent
 }
 
+private func parent4(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Scope {
+    return component.parent.parent.parent.parent
+}
+
 // MARK: - Providers
 
 #if !NEEDLE_DYNAMIC
@@ -48,7 +52,7 @@ private class LoginInViewDependency2abb3c8c60c1e97fe50cProvider: LoginInViewDepe
 private func factory7e03f72a3a9927a551b25b46fe57dd3e282050f7(_ component: NeedleFoundation.Scope) -> AnyObject {
     return LoginInViewDependency2abb3c8c60c1e97fe50cProvider(rootNavComponent: parent3(component) as! RootNavComponent)
 }
-private class HomeSecondViewDependency8cde6d322ec21db56f57Provider: HomeSecondViewDependency {
+private class HomeSecondViewDependency4cc1c19d041b25f7a5afProvider: HomeSecondViewDependency {
     var goToEntry: () -> Void {
         return rootNavComponent.goToEntry
     }
@@ -57,22 +61,9 @@ private class HomeSecondViewDependency8cde6d322ec21db56f57Provider: HomeSecondVi
         self.rootNavComponent = rootNavComponent
     }
 }
-/// ^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeSecondViewComponent
-private func factory372227dbbee43732aef65b46fe57dd3e282050f7(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return HomeSecondViewDependency8cde6d322ec21db56f57Provider(rootNavComponent: parent3(component) as! RootNavComponent)
-}
-private class HomeFirstViewDependency9909716c9cade48b7ac3Provider: HomeFirstViewDependency {
-    var goToSecond: () -> Void {
-        return homeNavComponent.goToSecond
-    }
-    private let homeNavComponent: HomeNavComponent
-    init(homeNavComponent: HomeNavComponent) {
-        self.homeNavComponent = homeNavComponent
-    }
-}
-/// ^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent
-private func factory03e6c5c57ef2f05fcab2a7b75c5f91bd88523d04(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return HomeFirstViewDependency9909716c9cade48b7ac3Provider(homeNavComponent: parent1(component) as! HomeNavComponent)
+/// ^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent->HomeSecondViewComponent
+private func factory83fbe82a9ab04b4637a90598d654cee8c28e7e05(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return HomeSecondViewDependency4cc1c19d041b25f7a5afProvider(rootNavComponent: parent4(component) as! RootNavComponent)
 }
 
 #else
@@ -106,7 +97,8 @@ extension HomeSecondViewComponent: Registration {
 }
 extension HomeFirstViewComponent: Registration {
     public func registerItems() {
-        keyPathToName[\HomeFirstViewDependency.goToSecond] = "goToSecond-() -> Void"
+
+
     }
 }
 extension HomeNavComponent: Registration {
@@ -141,8 +133,8 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->RootNavComponent->EntryNavComponent->LoginNavComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->RootNavComponent->EntryNavComponent->LoginNavComponent->LoginViewComponent", factory7e03f72a3a9927a551b25b46fe57dd3e282050f7)
     registerProviderFactory("^->RootNavComponent", factoryEmptyDependencyProvider)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeSecondViewComponent", factory372227dbbee43732aef65b46fe57dd3e282050f7)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent", factory03e6c5c57ef2f05fcab2a7b75c5f91bd88523d04)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent->HomeSecondViewComponent", factory83fbe82a9ab04b4637a90598d654cee8c28e7e05)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->RootNavComponent->MainNavComponent", factoryEmptyDependencyProvider)
 }

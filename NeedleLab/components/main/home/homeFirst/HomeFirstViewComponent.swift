@@ -8,18 +8,14 @@
 import NeedleFoundation
 import SwiftUI
 
-protocol HomeFirstViewDependency: Dependency {
-    var goToSecond: () -> Void { get }
-}
-
 protocol HomeFirstViewBuilder {
     var homeFirstUIHostingController: UIViewController { get }
 }
 
-final class HomeFirstViewComponent: Component<HomeFirstViewDependency>, HomeFirstViewBuilder {
+final class HomeFirstViewComponent: Component<EmptyDependency>, HomeFirstViewBuilder {
     
     var homeFirstUIHostingController: UIViewController {
-        return UIHostingController(rootView: homeFirstScreen)
+        return shared { UIHostingController(rootView: homeFirstScreen) }
     }
     
     var homeFirstViewController: HomeFirstViewController {
@@ -30,12 +26,20 @@ final class HomeFirstViewComponent: Component<HomeFirstViewDependency>, HomeFirs
         return HomeFirstScreen(
             viewModel: homeFirstViewModel,
             viewController: homeFirstViewController,
-            goToSecond: dependency.goToSecond
+            goToSecond: goToSecond
         )
     }
     
     var homeFirstViewModel: HomeFirstViewModel {
         return HomeFirstViewModel()
+    }
+    
+    var goToSecond: () -> Void {{
+        self.homeFirstUIHostingController.navigationController?.pushViewController(self.homeSecondViewComponent.homeSecondHostingController, animated: true)
+    }}
+    
+    var homeSecondViewComponent: HomeSecondViewComponent {
+        return HomeSecondViewComponent(parent: self)
     }
     
     deinit {
