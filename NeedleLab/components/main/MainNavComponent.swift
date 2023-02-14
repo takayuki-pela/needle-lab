@@ -7,17 +7,13 @@
 
 import NeedleFoundation
 
-protocol MainNavDependency: Dependency {
-    
-}
-
 protocol MainNavBuilder {
     var mainNavController: UIViewController { get }
 }
 
-final class MainNavComponent: Component<MainNavDependency>, MainNavBuilder {    
+final class MainNavComponent: Component<EmptyDependency>, MainNavBuilder {
     var mainNavController: UIViewController {
-        return MainNavController(homeNavBuilder: homeNavComponent)
+        shared { MainNavController(homeNavBuilder: homeNavComponent) }
     }
     
     var homeNavComponent: HomeNavComponent {

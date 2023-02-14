@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeSecondScreen: View {
     @ObservedObject var viewModel: HomeSecondViewModel
+    var goToEntry: () -> Void
     
     var body: some View {
         VStack {
@@ -20,12 +21,17 @@ struct HomeSecondScreen: View {
                 Text("Count is \(viewModel.count)")
             }
 
+            Button {
+                goToEntry()
+            } label: {
+                Text("Go to Entry")
+            }
         }
     }
 }
 
 struct HomeSecondScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeSecondScreen(viewModel: HomeSecondViewModel())
+        HomeSecondScreen(viewModel: HomeSecondViewModel(), goToEntry: {} )
     }
 }

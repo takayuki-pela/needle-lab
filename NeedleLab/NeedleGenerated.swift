@@ -12,6 +12,14 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
     return component.parent
 }
 
+private func parent2(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Scope {
+    return component.parent.parent
+}
+
+private func parent3(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Scope {
+    return component.parent.parent.parent
+}
+
 // MARK: - Providers
 
 #if !NEEDLE_DYNAMIC
@@ -27,55 +35,62 @@ private class EntryNavDependencyc1caa2a522e995b1a3e5Provider: EntryNavDependency
 private func factory3d38a5c3ce560fd06cdee3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
     return EntryNavDependencyc1caa2a522e995b1a3e5Provider()
 }
+private class LoginInViewDependency2abb3c8c60c1e97fe50cProvider: LoginInViewDependency {
+    var goToMain: () -> Void {
+        return rootNavComponent.goToMain
+    }
+    private let rootNavComponent: RootNavComponent
+    init(rootNavComponent: RootNavComponent) {
+        self.rootNavComponent = rootNavComponent
+    }
+}
+/// ^->RootNavComponent->EntryNavComponent->LoginNavComponent->LoginViewComponent
+private func factory7e03f72a3a9927a551b25b46fe57dd3e282050f7(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return LoginInViewDependency2abb3c8c60c1e97fe50cProvider(rootNavComponent: parent3(component) as! RootNavComponent)
+}
 private class HomeSecondViewDependency8cde6d322ec21db56f57Provider: HomeSecondViewDependency {
-
-
-    init() {
-
+    var goToEntry: () -> Void {
+        return rootNavComponent.goToEntry
+    }
+    private let rootNavComponent: RootNavComponent
+    init(rootNavComponent: RootNavComponent) {
+        self.rootNavComponent = rootNavComponent
     }
 }
 /// ^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeSecondViewComponent
-private func factory372227dbbee43732aef6e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return HomeSecondViewDependency8cde6d322ec21db56f57Provider()
+private func factory372227dbbee43732aef65b46fe57dd3e282050f7(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return HomeSecondViewDependency8cde6d322ec21db56f57Provider(rootNavComponent: parent3(component) as! RootNavComponent)
 }
 private class HomeFirstViewDependency9909716c9cade48b7ac3Provider: HomeFirstViewDependency {
-
-
-    init() {
-
+    var goToSecond: () -> Void {
+        return homeNavComponent.goToSecond
+    }
+    private let homeNavComponent: HomeNavComponent
+    init(homeNavComponent: HomeNavComponent) {
+        self.homeNavComponent = homeNavComponent
     }
 }
 /// ^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent
-private func factory03e6c5c57ef2f05fcab2e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return HomeFirstViewDependency9909716c9cade48b7ac3Provider()
-}
-private class HomeNavDependency3e35ece81f77ac7e80c3Provider: HomeNavDependency {
-
-
-    init() {
-
-    }
-}
-/// ^->RootNavComponent->MainNavComponent->HomeNavComponent
-private func factoryf319748c34c358068101e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return HomeNavDependency3e35ece81f77ac7e80c3Provider()
-}
-private class MainNavDependencyf3678d30813bd7dcc4e4Provider: MainNavDependency {
-
-
-    init() {
-
-    }
-}
-/// ^->RootNavComponent->MainNavComponent
-private func factory292e885e4a00ce28ff9ce3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return MainNavDependencyf3678d30813bd7dcc4e4Provider()
+private func factory03e6c5c57ef2f05fcab2a7b75c5f91bd88523d04(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return HomeFirstViewDependency9909716c9cade48b7ac3Provider(homeNavComponent: parent1(component) as! HomeNavComponent)
 }
 
 #else
 extension EntryNavComponent: Registration {
     public func registerItems() {
 
+
+    }
+}
+extension LoginNavComponent: Registration {
+    public func registerItems() {
+
+
+    }
+}
+extension LoginViewComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\LoginInViewDependency.goToMain] = "goToMain-() -> Void"
     }
 }
 extension RootNavComponent: Registration {
@@ -86,12 +101,12 @@ extension RootNavComponent: Registration {
 }
 extension HomeSecondViewComponent: Registration {
     public func registerItems() {
-
+        keyPathToName[\HomeSecondViewDependency.goToEntry] = "goToEntry-() -> Void"
     }
 }
 extension HomeFirstViewComponent: Registration {
     public func registerItems() {
-
+        keyPathToName[\HomeFirstViewDependency.goToSecond] = "goToSecond-() -> Void"
     }
 }
 extension HomeNavComponent: Registration {
@@ -123,11 +138,13 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 
 @inline(never) private func register1() {
     registerProviderFactory("^->RootNavComponent->EntryNavComponent", factory3d38a5c3ce560fd06cdee3b0c44298fc1c149afb)
+    registerProviderFactory("^->RootNavComponent->EntryNavComponent->LoginNavComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->EntryNavComponent->LoginNavComponent->LoginViewComponent", factory7e03f72a3a9927a551b25b46fe57dd3e282050f7)
     registerProviderFactory("^->RootNavComponent", factoryEmptyDependencyProvider)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeSecondViewComponent", factory372227dbbee43732aef6e3b0c44298fc1c149afb)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent", factory03e6c5c57ef2f05fcab2e3b0c44298fc1c149afb)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent", factoryf319748c34c358068101e3b0c44298fc1c149afb)
-    registerProviderFactory("^->RootNavComponent->MainNavComponent", factory292e885e4a00ce28ff9ce3b0c44298fc1c149afb)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeSecondViewComponent", factory372227dbbee43732aef65b46fe57dd3e282050f7)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent->HomeFirstViewComponent", factory03e6c5c57ef2f05fcab2a7b75c5f91bd88523d04)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent->HomeNavComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootNavComponent->MainNavComponent", factoryEmptyDependencyProvider)
 }
 #endif
 

@@ -9,7 +9,7 @@ import NeedleFoundation
 import SwiftUI
 
 protocol HomeFirstViewDependency: Dependency {
-    
+    var goToSecond: () -> Void { get }
 }
 
 protocol HomeFirstViewBuilder {
@@ -23,7 +23,7 @@ final class HomeFirstViewComponent: Component<HomeFirstViewDependency>, HomeFirs
     }
     
     var homeFirstScreen: HomeFirstScreen {
-        return HomeFirstScreen(viewModel: homeFirstViewModel)
+        return HomeFirstScreen(viewModel: homeFirstViewModel, goToSecond: dependency.goToSecond)
     }
     
     var homeFirstViewModel: HomeFirstViewModel {

@@ -38,6 +38,10 @@
 		3BC9D13D299AF2040082DED2 /* HomeFristViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D13C299AF2040082DED2 /* HomeFristViewModel.swift */; };
 		3BC9D13F299AF3180082DED2 /* HomeSecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D13E299AF3180082DED2 /* HomeSecondScreen.swift */; };
 		3BC9D141299AF3230082DED2 /* HomeSecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D140299AF3230082DED2 /* HomeSecondViewModel.swift */; };
+		3BC9D143299B01B40082DED2 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D142299B01B40082DED2 /* LoginScreen.swift */; };
+		3BC9D145299B01C10082DED2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D144299B01C10082DED2 /* LoginViewModel.swift */; };
+		3BC9D147299B032F0082DED2 /* LoginNavComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D146299B032F0082DED2 /* LoginNavComponent.swift */; };
+		3BC9D149299B03410082DED2 /* LoginNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D148299B03410082DED2 /* LoginNavController.swift */; };
 		5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +82,10 @@
 		3BC9D13C299AF2040082DED2 /* HomeFristViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFristViewModel.swift; sourceTree = "<group>"; };
 		3BC9D13E299AF3180082DED2 /* HomeSecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondScreen.swift; sourceTree = "<group>"; };
 		3BC9D140299AF3230082DED2 /* HomeSecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondViewModel.swift; sourceTree = "<group>"; };
+		3BC9D142299B01B40082DED2 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		3BC9D144299B01C10082DED2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3BC9D146299B032F0082DED2 /* LoginNavComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavComponent.swift; sourceTree = "<group>"; };
+		3BC9D148299B03410082DED2 /* LoginNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +150,8 @@
 			children = (
 				3BC9D0F7299AE25D0082DED2 /* EntryNavComponent.swift */,
 				3BC9D114299AE4190082DED2 /* EntryNavController.swift */,
-				3BC9D10B299AE32E0082DED2 /* signup */,
 				3BC9D108299AE31A0082DED2 /* login */,
+				3BC9D10B299AE32E0082DED2 /* signup */,
 			);
 			path = entry;
 			sourceTree = "<group>";
@@ -173,7 +181,8 @@
 		3BC9D103299AE2D50082DED2 /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9D133299AEA550082DED2 /* root */,
+				3BC9D104299AE2F40082DED2 /* SettingNavComponent.swift */,
+				3BC9D12D299AE9DA0082DED2 /* SettingNavController.swift */,
 				3BC9D12F299AE9F40082DED2 /* setting */,
 				3BC9D130299AEA000082DED2 /* myAccount */,
 			);
@@ -183,7 +192,9 @@
 		3BC9D108299AE31A0082DED2 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9D109299AE3270082DED2 /* LogInComponent.swift */,
+				3BC9D146299B032F0082DED2 /* LoginNavComponent.swift */,
+				3BC9D148299B03410082DED2 /* LoginNavController.swift */,
+				3BC9D14A299B03480082DED2 /* login */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -236,13 +247,14 @@
 			path = myAccount;
 			sourceTree = "<group>";
 		};
-		3BC9D133299AEA550082DED2 /* root */ = {
+		3BC9D14A299B03480082DED2 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9D104299AE2F40082DED2 /* SettingNavComponent.swift */,
-				3BC9D12D299AE9DA0082DED2 /* SettingNavController.swift */,
+				3BC9D109299AE3270082DED2 /* LogInComponent.swift */,
+				3BC9D142299B01B40082DED2 /* LoginScreen.swift */,
+				3BC9D144299B01C10082DED2 /* LoginViewModel.swift */,
 			);
-			path = root;
+			path = login;
 			sourceTree = "<group>";
 		};
 		3FCB2D3EAEA40138B8346A27 /* Pods */ = {
@@ -397,11 +409,13 @@
 			files = (
 				3BC9D10F299AE35F0082DED2 /* SignupComponent.swift in Sources */,
 				3BC9D0F8299AE25D0082DED2 /* EntryNavComponent.swift in Sources */,
+				3BC9D143299B01B40082DED2 /* LoginScreen.swift in Sources */,
 				3BC9D13F299AF3180082DED2 /* HomeSecondScreen.swift in Sources */,
 				3BC9D132299AEA1B0082DED2 /* MyAccountViewController.swift in Sources */,
 				3BC9D115299AE4190082DED2 /* EntryNavController.swift in Sources */,
 				3BC9D107299AE3060082DED2 /* MyAccountViewComponent.swift in Sources */,
 				3BC9D111299AE36E0082DED2 /* ConfirmEmailComponent.swift in Sources */,
+				3BC9D145299B01C10082DED2 /* LoginViewModel.swift in Sources */,
 				3BC9D100299AE2B20082DED2 /* HomeNavComponent.swift in Sources */,
 				3BC9D137299AEBE30082DED2 /* SettingViewComponent.swift in Sources */,
 				3B8603AC299ADE7100DE3FE0 /* NeedleGenerated.swift in Sources */,
@@ -414,6 +428,7 @@
 				3B9579AD299AB4660000FC3A /* ViewController.swift in Sources */,
 				3B9579A9299AB4660000FC3A /* AppDelegate.swift in Sources */,
 				3BC9D105299AE2F40082DED2 /* SettingNavComponent.swift in Sources */,
+				3BC9D149299B03410082DED2 /* LoginNavController.swift in Sources */,
 				3BC9D128299AE98A0082DED2 /* HomeSecondViewComponent.swift in Sources */,
 				3BC9D12E299AE9DA0082DED2 /* SettingNavController.swift in Sources */,
 				3BC9D113299AE3F10082DED2 /* MainNavController.swift in Sources */,
@@ -423,6 +438,7 @@
 				3BC9D10D299AE34B0082DED2 /* CreateAccountComponent.swift in Sources */,
 				3BC9D102299AE2D10082DED2 /* HomeFirstViewComponent.swift in Sources */,
 				3BC9D10A299AE3270082DED2 /* LogInComponent.swift in Sources */,
+				3BC9D147299B032F0082DED2 /* LoginNavComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,4 +20,9 @@ final class HomeNavController: UINavigationController {
     
     private let homeFirstViewBuilder: HomeFirstViewBuilder
     private let homeSecondViewBuilder: HomeSecondViewBuilder
+    
+    func pushToSecond() {
+        print(self)
+        self.pushViewController(homeSecondViewBuilder.homeSecondViewController, animated: true)
+    }
 }

@@ -7,21 +7,20 @@
 
 import NeedleFoundation
 
-protocol HomeNavDependency: Dependency {
-    
-}
-
 protocol HomeNavBuilder {
-    var homeNavController: UIViewController { get }
+    var homeNavController: HomeNavController { get }
 }
 
-final class HomeNavComponent: Component<HomeNavDependency>, HomeNavBuilder {
-    var homeNavController: UIViewController {
-        return HomeNavController(
-            homeFirstViewBuilder: homeFirstViewComponent,
-            homeSecondViewBuilder: homeSecondViewComponent
+final class HomeNavComponent: Component<EmptyDependency>, HomeNavBuilder {
+    var homeNavController: HomeNavController {
+        let vc = HomeNavController(
+                homeFirstViewBuilder: homeFirstViewComponent,
+                homeSecondViewBuilder: homeSecondViewComponent
         )
+        capturedVC = vc
+        return vc
     }
+    var capturedVC: HomeNavController? = nil
     
     var homeFirstViewComponent: HomeFirstViewComponent {
         return HomeFirstViewComponent(parent: self)
@@ -29,5 +28,12 @@ final class HomeNavComponent: Component<HomeNavDependency>, HomeNavBuilder {
     
     var homeSecondViewComponent: HomeSecondViewComponent {
         return HomeSecondViewComponent(parent: self)
+    }
+    
+    // --- dependencies to children
+    var goToSecond: () -> Void {
+        return { [weak self] in
+            self?.capturedVC?.pushToSecond()
+        }
     }
 }

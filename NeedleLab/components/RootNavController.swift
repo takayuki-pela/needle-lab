@@ -12,7 +12,7 @@ final class RootNavController: UITabBarController {
         self.mainNavBuilder = mainNavBuilder
         self.entryNavBuilder = entryNavBuilder
         super.init(nibName: nil, bundle: nil)
-        self.viewControllers = [mainNavBuilder.mainNavController, entryNavBuilder.entryNavController]
+        self.viewControllers = [mainNavBuilder.mainNavController]
     }
     
     required init?(coder: NSCoder) {
@@ -21,4 +21,13 @@ final class RootNavController: UITabBarController {
     
     private let mainNavBuilder: MainNavBuilder
     private let entryNavBuilder: EntryNavBuilder
+    
+    func switchToMain() {
+        self.viewControllers = [mainNavBuilder.mainNavController]
+    }
+    
+    func switchToEntry() {
+        print(self)
+        self.viewControllers = [entryNavBuilder.entryNavController]
+    }
 }

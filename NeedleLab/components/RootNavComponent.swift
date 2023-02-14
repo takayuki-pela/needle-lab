@@ -13,11 +13,12 @@ protocol RootNavBuilder {
 
 final class RootNavComponent: BootstrapComponent, RootNavBuilder {
     var rootNavController: UIViewController {
-        return RootNavController(
-            mainNavBuilder: mainNavComponent,
-            entryNavBuilder: entryNavComponent
+        RootNavController(
+                mainNavBuilder: mainNavComponent,
+                entryNavBuilder: entryNavComponent
         )
     }
+    
     
     var mainNavComponent: MainNavComponent {
         return MainNavComponent(parent: self)
@@ -27,13 +28,14 @@ final class RootNavComponent: BootstrapComponent, RootNavBuilder {
         return EntryNavComponent(parent: self)
     }
     
-    func goToMain() {
-        guard let tabVC = rootNavController as? UITabBarController else { return }
-        tabVC.selectedIndex = 0
-    }
+    var goToMain: () -> Void { { [weak self] in
+        guard let tabVC = self?.rootNavController as? RootNavController else { return }
+        tabVC.switchToMain()
+    } }
     
-    func goToEntry() {
-        guard let tabVC = rootNavController as? UITabBarController else { return }
-        tabVC.selectedIndex = 1
-    }
+    var goToEntry: () -> Void { { [weak self] in
+        guard let tabVC = self?.rootNavController as? RootNavController else { return }
+        tabVC.switchToEntry()
+    } }
+    
 }

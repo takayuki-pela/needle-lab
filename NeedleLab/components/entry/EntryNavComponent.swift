@@ -17,6 +17,10 @@ protocol EntryNavBuilder {
 
 final class EntryNavComponent: Component<EntryNavDependency>, EntryNavBuilder {
     var entryNavController: UIViewController {
-        EntryNavController()
+        shared { EntryNavController(loginNavBuilder: loginNavComponent) }
+    }
+    
+    var loginNavComponent: LoginNavComponent {
+        LoginNavComponent(parent: self)
     }
 }
