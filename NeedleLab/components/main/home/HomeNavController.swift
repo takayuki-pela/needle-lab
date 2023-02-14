@@ -11,7 +11,7 @@ final class HomeNavController: UINavigationController {
     internal init(homeFirstViewBuilder: HomeFirstViewBuilder, homeSecondViewBuilder: HomeSecondViewBuilder) {
         self.homeFirstViewBuilder = homeFirstViewBuilder
         self.homeSecondViewBuilder = homeSecondViewBuilder
-        super.init(rootViewController: homeFirstViewBuilder.homeFirstViewController)
+        super.init(rootViewController: homeFirstViewBuilder.homeFirstUIHostingController)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,7 +22,7 @@ final class HomeNavController: UINavigationController {
     private let homeSecondViewBuilder: HomeSecondViewBuilder
     
     func pushToSecond() {
-        self.pushViewController(homeSecondViewBuilder.homeSecondViewController, animated: true)
+        self.pushViewController(homeSecondViewBuilder.homeSecondHostingController, animated: true)
     }
     
     deinit {

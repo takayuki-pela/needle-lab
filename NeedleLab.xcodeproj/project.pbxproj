@@ -42,6 +42,8 @@
 		3BC9D145299B01C10082DED2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D144299B01C10082DED2 /* LoginViewModel.swift */; };
 		3BC9D147299B032F0082DED2 /* LoginNavComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D146299B032F0082DED2 /* LoginNavComponent.swift */; };
 		3BC9D149299B03410082DED2 /* LoginNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D148299B03410082DED2 /* LoginNavController.swift */; };
+		3BC9D14C299B13EE0082DED2 /* HomeFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D14B299B13EE0082DED2 /* HomeFirstViewController.swift */; };
+		3BC9D14E299BFF710082DED2 /* HomeSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9D14D299BFF710082DED2 /* HomeSecondViewController.swift */; };
 		5C329FE3E35D090C85161C34 /* Pods_NeedleLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320990D899A804B8A25F5B0C /* Pods_NeedleLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		3BC9D144299B01C10082DED2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3BC9D146299B032F0082DED2 /* LoginNavComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavComponent.swift; sourceTree = "<group>"; };
 		3BC9D148299B03410082DED2 /* LoginNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavController.swift; sourceTree = "<group>"; };
+		3BC9D14B299B13EE0082DED2 /* HomeFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFirstViewController.swift; sourceTree = "<group>"; };
+		3BC9D14D299BFF710082DED2 /* HomeSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3BC9D101299AE2D10082DED2 /* HomeFirstViewComponent.swift */,
+				3BC9D14B299B13EE0082DED2 /* HomeFirstViewController.swift */,
 				3BC9D13A299AF1F10082DED2 /* HomeFirstScreen.swift */,
 				3BC9D13C299AF2040082DED2 /* HomeFristViewModel.swift */,
 			);
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				3BC9D127299AE98A0082DED2 /* HomeSecondViewComponent.swift */,
+				3BC9D14D299BFF710082DED2 /* HomeSecondViewController.swift */,
 				3BC9D13E299AF3180082DED2 /* HomeSecondScreen.swift */,
 				3BC9D140299AF3230082DED2 /* HomeSecondViewModel.swift */,
 			);
@@ -426,6 +432,7 @@
 				3BC9D135299AEB730082DED2 /* SettingViewController.swift in Sources */,
 				3BC9D13B299AF1F10082DED2 /* HomeFirstScreen.swift in Sources */,
 				3B9579AD299AB4660000FC3A /* ViewController.swift in Sources */,
+				3BC9D14C299B13EE0082DED2 /* HomeFirstViewController.swift in Sources */,
 				3B9579A9299AB4660000FC3A /* AppDelegate.swift in Sources */,
 				3BC9D105299AE2F40082DED2 /* SettingNavComponent.swift in Sources */,
 				3BC9D149299B03410082DED2 /* LoginNavController.swift in Sources */,
@@ -433,6 +440,7 @@
 				3BC9D12E299AE9DA0082DED2 /* SettingNavController.swift in Sources */,
 				3BC9D113299AE3F10082DED2 /* MainNavController.swift in Sources */,
 				3B8603AF299AE02A00DE3FE0 /* RootNavComponent.swift in Sources */,
+				3BC9D14E299BFF710082DED2 /* HomeSecondViewController.swift in Sources */,
 				3BC9D0FB299AE27E0082DED2 /* MainNavComponent.swift in Sources */,
 				3B9579AB299AB4660000FC3A /* SceneDelegate.swift in Sources */,
 				3BC9D10D299AE34B0082DED2 /* CreateAccountComponent.swift in Sources */,

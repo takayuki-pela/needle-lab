@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeFirstScreen: View {
     @ObservedObject var viewModel: HomeFirstViewModel
+    var viewController: HomeFirstViewController
     
     var goToSecond: () -> Void
     
@@ -17,7 +18,7 @@ struct HomeFirstScreen: View {
             Text("Home First")
             
             Button {
-                viewModel.count += 1
+                viewController.addCount()
             } label: {
                 Text("Count is \(viewModel.count)")
             }
@@ -33,6 +34,6 @@ struct HomeFirstScreen: View {
 
 struct HomeFirstScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeFirstScreen(viewModel: HomeFirstViewModel(), goToSecond: {})
+        HomeFirstScreen(viewModel: HomeFirstViewModel(), viewController: HomeFirstViewController(viewModel: HomeFirstViewModel()), goToSecond: {})
     }
 }

@@ -13,16 +13,20 @@ protocol HomeSecondViewDependency: Dependency {
 }
 
 protocol HomeSecondViewBuilder {
-    var homeSecondViewController: UIViewController { get }
+    var homeSecondHostingController: UIViewController { get }
 }
 
 final class HomeSecondViewComponent: Component<HomeSecondViewDependency>, HomeSecondViewBuilder {
-    var homeSecondViewController: UIViewController {
+    var homeSecondHostingController: UIViewController {
         return UIHostingController(rootView: homeSecondScreen)
     }
     
+    var homeSecondViewController: HomeSecondViewController {
+        return HomeSecondViewController(viewModel: homeSecondViewModel)
+    }
+    
     var homeSecondScreen: HomeSecondScreen {
-        return HomeSecondScreen(viewModel: homeSecondViewModel, goToEntry: dependency.goToEntry)
+        return HomeSecondScreen(viewModel: homeSecondViewModel, viewController: homeSecondViewController, goToEntry: dependency.goToEntry)
     }
     
     var homeSecondViewModel: HomeSecondViewModel {
